@@ -8,15 +8,27 @@ import { useState } from "react";
 function App() {
   const [email, setEmail] = useState("");
   const [isInputValid, setIsInputValid] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(
+    "Whoops! It looks like you forgot to add your email"
+  );
 
   const inputHandler = (event) => {
-    console.log(event.target.value);
     setEmail(event.target.value);
   };
 
   const validationHandler = (e) => {
     e.preventDefault();
-    /\S+@\S+\.\S+/.test(email) ? setIsInputValid(true) : setIsInputValid(false);
+    if (!email) {
+      setIsInputValid(false);
+      setErrorMessage("Whoops! It looks like you forgot to add your email");
+    }
+    if (email && !/\S+@\S+\.\S+/.test(email)) {
+      setIsInputValid(false);
+      setErrorMessage("Please provide a valid email address");
+    }
+    if (email && /\S+@\S+\.\S+/.test(email)) {
+      setIsInputValid(true);
+    }
   };
 
   return (
@@ -37,11 +49,7 @@ function App() {
             placeholder="Your email address..."
             value={email}
           />
-          {!isInputValid && (
-            <p className="error-message">
-              Please provide a valid email address
-            </p>
-          )}
+          {!isInputValid && <p className="error-message">{errorMessage}</p>}
           <button className="btn" type="submit">
             Notify Me
           </button>
@@ -60,7 +68,7 @@ function App() {
             <FaInstagram size="16px" />
           </a>
         </div>
-        <p className="copyright">&copy; Copyright Ping. All rights reserved.</p>
+        <p className="copyright">© Copyright Ping. All rights reserved.</p>
       </footer>
     </div>
   );

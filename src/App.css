@@ -139,6 +139,7 @@ footer {
   color: var(--blue);
 }
 
+.social-links:focus,
 .social-links:hover {
   color: white;
   background-color: var(--blue);
