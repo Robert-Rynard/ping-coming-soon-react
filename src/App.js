@@ -3,8 +3,22 @@ import "./App.css";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
 import logo from "./images/logo.svg";
+import { useState } from "react";
 
 function App() {
+  const [email, setEmail] = useState("");
+  const [isInputValid, setIsInputValid] = useState(true);
+
+  const inputHandler = (event) => {
+    console.log(event.target.value);
+    setEmail(event.target.value);
+  };
+
+  const validationHandler = (e) => {
+    e.preventDefault();
+    /\S+@\S+\.\S+/.test(email) ? setIsInputValid(true) : setIsInputValid(false);
+  };
+
   return (
     <div className="grid">
       <header>
@@ -15,8 +29,19 @@ function App() {
           We are launching <strong>soon!</strong>
         </h1>
         <p className="subtitle">Subscribe and get notified</p>
-        <form action="">
-          <input type="email" placeholder="Your email address..." />
+        <form onSubmit={validationHandler} noValidate action="">
+          <input
+            className={!isInputValid && "invalid"}
+            type="email"
+            onChange={inputHandler}
+            placeholder="Your email address..."
+            value={email}
+          />
+          {!isInputValid && (
+            <p className="error-message">
+              Please provide a valid email address
+            </p>
+          )}
           <button className="btn" type="submit">
             Notify Me
           </button>
