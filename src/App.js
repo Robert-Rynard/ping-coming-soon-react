@@ -17,7 +17,9 @@ function App() {
         <p className="subtitle">Subscribe and get notified</p>
         <form action="">
           <input type="email" placeholder="Your email address..." />
-          <button type="submit">Notify Me</button>
+          <button className="btn" type="submit">
+            Notify Me
+          </button>
         </form>
       </main>
       <div className="dashboard-img"></div>

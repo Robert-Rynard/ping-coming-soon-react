@@ -63,6 +63,8 @@ form {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  max-width: 15rem;
+  margin: 0 auto;
 }
 
 form > * {
@@ -76,16 +78,18 @@ input {
   color: var(--blue);
 }
 
-button {
+.btn {
   border: 0;
   background-color: var(--blue);
   color: white;
   font-weight: 600;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.103);
 }
 
 .dashboard-img {
   background-image: url(./images/illustration-dashboard.png);
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
@@ -108,4 +112,10 @@ footer {
   border-radius: 50%;
   padding: 0.3rem;
   color: var(--blue);
+}
+
+.copyright {
+  font-size: 0.5rem;
+  color: var(--gray);
+  padding-top: 1rem;
 }
