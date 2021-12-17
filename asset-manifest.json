@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/ping-coming-soon-react/static/css/main.3aeff0c9.css",
+    "main.js": "/ping-coming-soon-react/static/js/main.13dc22d3.js",
+    "static/js/787.65cc7875.chunk.js": "/ping-coming-soon-react/static/js/787.65cc7875.chunk.js",
+    "static/media/illustration-dashboard.png": "/ping-coming-soon-react/static/media/illustration-dashboard.f9aaf3db81c10cfaff45.png",
+    "static/media/logo.svg": "/ping-coming-soon-react/static/media/logo.7e09371f05c7e00fddccee34a9deac87.svg",
+    "index.html": "/ping-coming-soon-react/index.html",
+    "main.3aeff0c9.css.map": "/ping-coming-soon-react/static/css/main.3aeff0c9.css.map",
+    "main.13dc22d3.js.map": "/ping-coming-soon-react/static/js/main.13dc22d3.js.map",
+    "787.65cc7875.chunk.js.map": "/ping-coming-soon-react/static/js/787.65cc7875.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3aeff0c9.css",
+    "static/js/main.13dc22d3.js"
+  ]
+}
